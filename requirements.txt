@@ -1,0 +1,10 @@
+# Sistem Alert Trading XAUUSD — Framework v2.2 (versi TradingView)
+# Install: pip install -r requirements.txt --break-system-packages
+
+pandas
+numpy
+pytz
+requests
+anthropic
+flask
+gunicorn
