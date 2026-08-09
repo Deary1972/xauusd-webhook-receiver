@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: xauusd-webhook-receiver
+    runtime: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn webhook_receiver:app --bind 0.0.0.0:$PORT"
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: WEBHOOK_SECRET
+        sync: false
+      - key: PRIMARY_TIMEFRAME
+        value: M15
+      - key: PYTHON_VERSION
+        value: "3.11.9"
